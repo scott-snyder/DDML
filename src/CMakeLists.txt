@@ -16,6 +16,7 @@ set(sources
   DDMLEventAction.cc
   )
 
+set(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_dd4hep_plugin(${PROJECT_NAME} SHARED ${sources})
 target_link_libraries(${PROJECT_NAME} PUBLIC
   ${Geant4_LIBRARIES}

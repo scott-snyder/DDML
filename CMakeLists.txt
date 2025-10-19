@@ -3,6 +3,10 @@
 cmake_minimum_required(VERSION 3.15)
 project(DDML LANGUAGES CXX)
 
+cmake_policy(SET CMP0144 NEW)
+cmake_policy(SET CMP0167 NEW)
+
+
 # Provides install directory variables as defined for GNU software
 include(GNUInstallDirs)
 set(CMAKE_INSTALL_LIBDIR lib)  # Make sure that the generated thisDDML.sh script points to the right location
@@ -74,7 +78,7 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 find_package(HDF5 COMPONENTS C CXX)
 find_package(MPI REQUIRED)
 if(HDF5_FOUND)
-  message("HDF5 found")
+  message("-- HDF5 found")
   message(STATUS "INCLUDE LOCATION" ${HDF5_INCLUDE_DIRS})
   message(STATUS "version" ${HDF5_VERSION})
   message(STATUS "DEFINITIONS" ${HDF5_DEFINITIONS})
@@ -87,18 +91,18 @@ endif()
 
 find_package(OnnxRuntime)
 if(OnnxRuntime_FOUND)
-  message("ONNX Runtime inference library found.")
+  message("-- ONNX Runtime inference library found.")
 else()
   message("ONNX Runtime not found!")
 endif()
 
-find_package(Torch)
-if(Torch_FOUND)
-  find_package( OpenMP REQUIRED)
-  message("Torch inference library found.")
-else()
-  message("Torch not found!")
-endif()
+#find_package(Torch)
+#if(Torch_FOUND)
+#  find_package( OpenMP REQUIRED)
+#  message("Torch inference library found.")
+#else()
+#  message("Torch not found!")
+#endif()
 
 if(NOT Torch_FOUND AND NOT OnnxRuntime_FOUND)
   message(FATAL "Cannot find ONNX or Torch for ML inference. Need at least one")
