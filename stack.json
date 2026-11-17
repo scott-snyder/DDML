@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "325dbabfc16a94bdbb10c62d59711c9866bbd3d7",
-  "head": "2935b263188fb1114f34727d5e0e91251e5aae96",
+  "prev": "42bb9b5396cf840d35a143dd91e87516a532e14f",
+  "head": "bc5017985b664199549c6f1b6637b92566c2845a",
   "applied": [
     "cmakewarn",
-    "gitignore",
-    "refresh-temp"
+    "gitignore"
   ],
   "unapplied": [
     "cxx26"
@@ -20,9 +19,6 @@
     },
     "gitignore": {
       "oid": "bc5017985b664199549c6f1b6637b92566c2845a"
-    },
-    "refresh-temp": {
-      "oid": "2935b263188fb1114f34727d5e0e91251e5aae96"
     }
   }
 }
