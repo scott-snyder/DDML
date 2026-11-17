@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "f45f36c549ad5de11ccb2b31b635811606efed43",
-  "head": "254dc38b72aa2c3e7e3b58ef423902f90c7aea3c",
-  "applied": [
+  "prev": "f07d505351c01157341c76e106c32741b802ec80",
+  "head": "fee49531e308b1bb7b304843325ab96b72816e84",
+  "applied": [],
+  "unapplied": [
     "cmakewarn",
     "gitignore",
     "cxx26"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "cmakewarn": {
