@@ -3,6 +3,10 @@
 cmake_minimum_required(VERSION 3.15)
 project(DDML LANGUAGES CXX)
 
+cmake_policy(SET CMP0144 NEW)
+cmake_policy(SET CMP0167 NEW)
+
+
 # Provides install directory variables as defined for GNU software
 include(GNUInstallDirs)
 set(CMAKE_INSTALL_LIBDIR lib)  # Make sure that the generated thisDDML.sh script points to the right location
@@ -43,7 +47,7 @@ find_package(EDM4HEP REQUIRED)
 find_package(HDF5 COMPONENTS C CXX)
 find_package(MPI REQUIRED)
 if(HDF5_FOUND)
-  message("HDF5 found")
+  message("-- HDF5 found")
   message(STATUS "INCLUDE LOCATION" ${HDF5_INCLUDE_DIRS})
   message(STATUS "version" ${HDF5_VERSION})
   message(STATUS "DEFINITIONS" ${HDF5_DEFINITIONS})
@@ -61,13 +65,13 @@ else()
   message("ONNX Runtime not found!")
 endif()
 
-find_package(Torch)
-if(Torch_FOUND)
-  find_package( OpenMP REQUIRED)
-  message("Torch inference library found.")
-else()
-  message("Torch not found!")
-endif()
+#find_package(Torch)
+#if(Torch_FOUND)
+#  find_package( OpenMP REQUIRED)
+#  message("Torch inference library found.")
+#else()
+#  message("Torch not found!")
+#endif()
 
 option(DDML_ENABLE_EMBEDDED_PYINFERENCE "Build embedded-Python inference backend" ON)
 
