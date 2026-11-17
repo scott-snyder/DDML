@@ -1,6 +1,6 @@
-Bottom: 98f05289b7dbcfeef8e6121121966d5aafa3b97f
-Top:    c46dc7802b573988649c31406d16a984fc146b1e
+Bottom: 388fffad2a619341f8f11dc905896df63d946611
+Top:    388fffad2a619341f8f11dc905896df63d946611
 Author: sss <sss@karma>
-Date:   2026-09-09 17:01:35 -0400
+Date:   2026-11-17 13:14:04 -0500
 
 Allow compiling with C++26.
